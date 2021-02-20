@@ -1,0 +1,17 @@
+﻿@using cosmetic_hub__e_shopping_system_.Models;
+@model IEnumerable<Product>
+
+    <div>
+        All Products are here
+    </div>
+    <h1>@ViewBag.Name</h1>
+
+@{ 
+    foreach(var product in Model)
+    {
+        <div>
+            <h5> Product Price: @product.ProductPrice</h5>
+            <p>Product Name: @product.Name</p>
+        </div>
+    }
+}
