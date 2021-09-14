@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -11,6 +13,7 @@ namespace cosmetic_hub__e_shopping_system_.Models
 
         public string Name { get; set; }
 
+        [Column(TypeName = "decimal(18, 2)")]
         public decimal ProductPrice { get; set; }
 
         public string ShortProductDetails { get; set; }

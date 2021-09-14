@@ -1,0 +1,17 @@
+﻿@model Product
+
+    <div class="card">
+        <div class="card-body" >
+            <img class="card-img" src = "@Model.ImageThumbnail" alt="Alternate Text"  />
+            <div class="card-detail">
+                <h6>@Model.Name</h6>
+                <p>@Model.ShortProductDetails</p>
+                <h5>@Model.ProductPrice</h5>
+            </div>
+            <div class="addCart">
+                <a asp-controller="Product" asp-action="ProductDetails" asp-route-id="@Model.ProductId">Details</a>
+                <a asp-controller="Cart" asp-action="AddToCart" asp-route-productId ="@Model.ProductId">Add to Cart</a>
+            </div>
+        </div>
+
+    </div> 

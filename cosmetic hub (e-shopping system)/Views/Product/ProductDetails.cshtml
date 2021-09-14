@@ -1,0 +1,25 @@
+﻿@model cosmetic_hub__e_shopping_system_.Models.Product
+
+@{
+    ViewData["Title"] = "ProductDetails";
+}
+
+<h1>ProductDetails</h1>
+
+<div style="width: 400px">
+    <div class="card">
+        <div class="card-body" >
+            <img class="card-img" src="@Model.ImageThumbnail" alt="Alternate Text" />
+            <div class="card-detail">
+                <h6>@Model.Name</h6>
+                <p>@Model.LongProductDetails</p>
+                <h6>@Model.ProductPrice</h6>
+            </div>
+        </div>
+
+    </div>
+    <div>
+        |
+        <a asp-action="ProductList">Back to List</a>
+    </div>
+</div>

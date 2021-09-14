@@ -1,0 +1,54 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - cosmetic_hub__e_shopping_system_</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link href="~/lib/font-awesome/css/all.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a class="brand" asp-controller="Product" asp-action="ProductList">T-STORES</a></li>
+                <li class=" category nav-item dropdown">
+                    <a class="nav-link dropdown-toggle btn btn-outline-light" data-toggle="dropdown" href="#" role="button" aria-expanded="false">Categories</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" asp-controller="Product" asp-action="ProductList" asp-route-productCategory="Perfumes">Perfumes</a></li>
+                        <li><a class="dropdown-item" asp-controller="Product" asp-action="ProductList" asp-route-productCategory="Face Care Products">Facials</a></li>
+                        <li><a class="dropdown-item" asp-controller="Product" asp-action="ProductList" asp-route-productCategory="Hair Care Products">Hair Products</a></li>
+                        <li><a class="dropdown-item" asp-controller="Product" asp-action="ProductList" asp-route-productCategory="Skin Care Products">Skin Care Products</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" asp-controller="Product" asp-action="ProductList" asp-route-productCategory="">View All Products</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <div>
+                        <form asp-controller="Product" asp-action="ProductSearch" method="get">
+                            <i class="fas fa-search"></i>
+                            <input class="text" type="search" name="search" placeholder="Search for Products and Categories" />
+                            <input class="searchButton" type="submit" />
+                        </form>
+                    </div>
+                </li>
+                <li><a asp-controller="Account" asp-action="Login">Login</a></li>
+                <li>Cart<a asp-controller="Cart" asp-action="ViewCart"><i class="fas fa-shopping-cart"></i></a>
+</ul>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

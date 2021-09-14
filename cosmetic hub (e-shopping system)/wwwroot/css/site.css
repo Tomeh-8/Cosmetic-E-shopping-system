@@ -61,6 +61,7 @@ html {
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
+  box-sizing:border-box;
 }
 .footer {
   position: absolute;
@@ -68,4 +69,93 @@ body {
   width: 100%;
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
+}
+
+header nav{
+    background-color: #25274D;
+    width: 85%;
+    margin: 5px auto;
+    height: 100px;
+    padding: 40px;
+    border-radius:10px;
+    color: white;
+}
+header nav ul {
+    display: flex;
+    justify-content:space-between;
+    list-style:none;
+}
+
+header nav .brand{
+    font-size: 25px;
+    text-decoration:none;
+    color:white;
+}
+
+header nav .category{
+    font-size: 15px;
+}
+
+header nav .text{
+    width: 500px;
+}
+
+header nav .searchButton{
+  background-color:orange;
+  color: white;
+  outline: none;
+  border: none;
+  padding: 5px 15px;
+  border-radius: 10px;
+}
+
+.wrapper {
+    display:flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    flex-basis: 25%; 
+}
+
+.card h6, .card p{
+  margin-bottom: 0px;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+}
+.card-img {
+    width: 150px;
+    height: 150px;
+    align-self: center;
+    margin-bottom: 10px;
+}
+
+.addCart {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.addCart button{
+    background-color: orange;
+    color: white;
+    outline: none;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 10px;
+}
+
+.addCart button:hover{
+    background-color: darkorange
+}
+
+.addCart a{
+    color: orange;
+}
+
+.addCart a:hover{
+    color:darkorange;
 }

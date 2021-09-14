@@ -1,0 +1,42 @@
+﻿@model ShoppingCartViewModel
+<hr />
+<table class="table table-bordered col-md-6 offset-2">
+    <thead>
+        <tr>
+            <th>
+                Products
+            </th>
+            <th>
+                Quantity
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.ShoppingCart.ShoppingCartItems)
+        {
+            <tr>
+                <td>
+                    @item.Product.Name
+                </td>
+                <td>
+                    @item.Amount
+                </td>
+                <td>
+                    <a class="text-danger" asp-controller="Cart" asp-action="RemoveFromCart" asp-route-productId ="@item.Product.ProductId">X</a>
+                </td>
+            </tr>
+        }
+        <tr>
+            <td>
+                <h6>Total:  @Model.ShoppingCartTotal</h6>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+<div class="row col-md-10">
+    <a class="btn btn-secondary text-white " asp-controller="Product" asp-action="ProductList">Add more products</a>
+    <a class="btn btn-danger text-white ml-auto mr-1" asp-controller="Cart" asp-action="ClearCart">Clear Cart</a>
+    <a class="btn btn-success text-white" asp-controller="Order" asp-action="Checkout">Check out</a>
+</div>

@@ -1,0 +1,11 @@
+﻿@model cosmetic_hub__e_shopping_system_.ViewModels.ProductListViewModel
+
+<div class="wrapper">
+    @{
+        foreach (var product in Model.Products)
+        {
+            @Html.Partial("ProductSummary", product)
+        }
+    }
+
+</div>
